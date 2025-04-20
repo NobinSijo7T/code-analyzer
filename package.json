@@ -1,0 +1,48 @@
+{
+    "name": "code-visualization",
+    "displayName": "Code Visualization",
+    "description": "A VS Code extension for code visualization and analysis",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:codeVisualization.show"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "codeVisualization.show",
+                "title": "Show Code Visualization"
+            }
+        ],
+        "views": {
+            "explorer": [
+                {
+                    "id": "codeVisualization",
+                    "name": "Code Visualization"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/node": "^16.18.34",
+        "@types/vscode": "^1.99.1",
+        "@typescript-eslint/eslint-plugin": "^6.7.0",
+        "@typescript-eslint/parser": "^6.7.0",
+        "eslint": "^8.26.0",
+        "typescript": "^5.2.2"
+    }
+}
